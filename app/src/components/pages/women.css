@@ -1,0 +1,69 @@
+
+.nav-link11{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: xx-large;
+   
+   
+   
+}
+
+.nav-link11:hover{
+    border-radius: 4px;
+    color:rgb(163, 177, 138);
+    transition: all 0.2s ease-out;
+}
+.navbar-nav11{
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.nav-item11{
+    background: rgb(40, 54, 24);
+    height: 50px;
+    padding-left: 20px;
+}
+.submenu11{
+    background: rgb(40, 54, 24);
+    display: flex;
+   
+}
+.submenu-link11{
+    color: white;
+  text-decoration: none;
+  padding: 0.5rem 3rem;
+
+}
+.submenu-link11:hover{
+    border-radius: 4px;
+    color: rgb(163, 177, 138);
+    transition: all 0.2s ease-out;
+}
+.search {
+    color: #050404;
+    padding-left: 10px;
+    block-size: 32px;
+    width: 150px;
+    margin-top: 10px;
+    margin-left:1000px; /* Push the search bar to the right */
+    border: 1px solid #ccc; 
+    font-size: 19px;
+  }
+  .search:focus {
+    outline: none; /* Remove default focus outline */
+    border-color:rgb(40, 54, 24); /* Adjust focus border color as needed */
+    box-shadow: 0 0 0 3px rgb(40, 54, 24); /* Adjust focus box shadow as needed */
+  }
+  .search::placeholder {
+    color: rgb(40, 54, 24); /* Adjust placeholder color as needed */
+    font-size: 22px;
+    font-weight: 100;
+    text-align: left;
+  }
+ 

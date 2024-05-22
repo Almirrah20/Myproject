@@ -1,0 +1,91 @@
+
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px; /* Adjust the gap between grid items */
+  align-items: center;
+  padding: 30px; /* Adjust the padding around the grid */
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    grid-template-columns: repeat(2, 1fr); /* Adjust for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    grid-template-columns: 1fr; /* Adjust for even smaller screens */
+  }
+}
+.box{
+  padding-left: 10px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  
+}
+.box:hover{
+box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px;
+transform: scale(0.9);
+
+}
+.card {
+
+    display: flex;
+    grid-template-rows: auto 1fr auto;
+  }
+
+.button1 {
+  background: rgb(40, 54, 24);
+  width: 100%;
+  padding: 12px 10px;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button1:hover{
+  background:rgb(163, 177, 138);
+  color: rgb(40, 54, 24);
+}
+
+.card .desc{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+
+}
+
+.card .desc h1{
+  font-size: 16px !important;
+  font-weight: 200%;
+  font-family: verdana;
+  text-transform:capitalize;
+  color: rgb(19, 42, 19);
+}
+.card .desc p{
+  font-size: 14px !important;
+  margin: 10px 0 20px;
+  color: rgb(19, 42, 19);
+
+}
+.card.image{
+  width: 85px;
+  background:#f9f9f9 ;
+  margin: 10px auto 5px;
+  position:relative;
+}
+.card .image img{
+  width: 85px;
+  aspect-ratio: 7/17;
+  transition: 0.3s ease-in-out;
+}

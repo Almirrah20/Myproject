@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.home,
+.category,
+.aboutus,
+.sign-up,
+.men,
+.Login,
+.women {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.home {
+  background-color: azure;
+  font-size: 100px;
+}
+
+.category {
+  background-color: azure;
+  font-size: 100px;
+}
+
+.aboutus {
+  background-color: azure;
+  font-size: 100px;
+}
+
+.sign-up {
+  background-color: azure;
+  font-size: 100px;
+}
+
+.men {
+  background-color: azure !important;
+  font-size: 100px;
+}
+
+.women{
+  background-color: azure !important;
+  font-size: 100px;
+}
+
+.Login {
+  background-color: azure;
+  font-size: 100px;
+}
+

@@ -1,0 +1,21 @@
+
+.aboutus{
+    background: rgb(163, 177, 138);
+     height: 200px;
+font-size: 70px;
+margin-top: 50px;
+color:  rgb(40, 54, 24);
+text-align: center;
+
+}
+.p{
+    background: rgb(255, 255, 255);
+    padding-top: 20px ;
+    height:100%;
+    font-size: 30px;
+    margin-top: 50px;
+    color:  rgb(40, 54, 24);
+    justify-content: center;
+    text-align: center;
+   
+}
