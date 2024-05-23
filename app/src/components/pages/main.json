@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "ProductName": "Bridal Outfit",
+        "ProductImages": "../images/Bridalgreen.png",
+        "ProductURL": "/Bridal"
+    },
+    {
+        "id": 2,
+        "ProductName": "Party Outfit",
+        "ProductImages": "../images/party.png",
+        "ProductURL": "/Bridal"
+    },
+    {
+        "id": 3,
+        "ProductName": "Meeting Outfit",
+        "ProductImages": "../images/meeting.png",
+        "ProductURL": "/Bridal"
+    },
+    {
+        "id": 4,
+        "ProductName": "Brunch Outfit",
+        "ProductImages": "../images/brunch.png",
+        "ProductURL": "/Bridal"
+    },
+    {
+        "id": 5,
+        "ProductName": "Casual Outfit",
+        "ProductImages": "../images/casual.png",
+        "ProductURL": "/Bridal"
+    }
+
+]

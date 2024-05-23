@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navwomen.css";
+import "./Mennav.css";
 
-function Navwomen() {
+function Mennav() {
   const [click, setClick] = useState(false);
 
   const closeMobileMenu = () => setClick(false);
@@ -81,23 +81,23 @@ function Navwomen() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Bridals" className="nav-links" onClick={closeMobileMenu}>
-              Bridals
+            <Link to="/Engagement" className="nav-links" onClick={closeMobileMenu}>
+              Engagement
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Party" className="nav-links" onClick={closeMobileMenu}>
-              Party
+            <Link to="/Seminars" className="nav-links" onClick={closeMobileMenu}>
+              Seminars
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Meeting" className="nav-links" onClick={closeMobileMenu}>
-              Meeting
+            <Link to="/Gatherings" className="nav-links" onClick={closeMobileMenu}>
+              Gathering
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Casual" className="nav-links" onClick={closeMobileMenu}>
-              Casual
+            <Link to="/Sports" className="nav-links" onClick={closeMobileMenu}>
+              Sports
             </Link>
           </li>
         </ul>
@@ -106,4 +106,4 @@ function Navwomen() {
   );
 }
 
-export default Navwomen;
+export default Mennav;

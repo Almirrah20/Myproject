@@ -1,69 +1,44 @@
-
 import React, { useState } from 'react';
-import './men.css';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router,  Switch, Route } from 'react-router-dom';
+import './Mencc.css';
+import main1 from './main1.json';
+import Mennav from '../Mennav.js'
+import Engagements from './Engagement.js';
+import Seminar1 from './Seminars.js';
+import Gatherings1 from './Gatherings.js'
+import Weddings from './Wedding.js'
+import Sports1 from './Sports';
+import Mencc from './Mencc.js';
+
+
+
+
 
 export default function Men() {
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-  const toggleSubMenu = () => {
-    setIsSubMenuOpen(!isSubMenuOpen);
-  };
-
- 
 
   return (
     <>
-     <nav className="navbar11">
-      <ul className="navbar-nav11">
-        <li className="nav-item11">
-          <a href="#" className="nav-link11" onClick={toggleSubMenu}>
-            Events
-            <input type="text" placeholder="Search" className="search" />
-          </a>
-          {isSubMenuOpen && (
-            <ul className="submenu11">
-              <li>
-                <Link to="/Women" className="submenu-link11">
-                  Wedding
-                </Link>
-              </li>
-              <li>
-                <Link to="AboutUs" className="submenu-link11">
-                Engagement
-                </Link>
-              </li>
-              <li>
-                <Link to="/Auth" className="submenu-link11">
-                  Seminars
-                </Link>
-              </li>
-              <li>
-                <Link to="/Auth" className="submenu-link11">
-                  Gatherings
-                </Link>
-              </li>
-              <li>
-                <Link to="/Auth" className="submenu-link11">
-                  Night-Out
-                </Link>
-              </li>
-              <li>
-                <Link to="/Auth" className="submenu-link11">
-                  Lunch
-                </Link>
-              </li>
-              <li>
-                <Link to="/Auth" className="submenu-link11">
-                  Sports
-                </Link>
-              </li>
-              
-            </ul>
-          )}
-        </li>
-      </ul>
-    </nav>
+    <div className='main'>
+    <Router>
+      <Mennav />
+      <Switch>
+      <Route path="/" exact component={Weddings} />
+      <Route path="/Engagement" component={Engagements} />
+      <Route path="/Seminars" component={Seminar1} />
+      <Route path="/Gatherings" component={Gatherings1} />
+      <Route path="/Sports" component={Sports1} />
+      </Switch>
+    </Router>
+    <h2 className='headingg'>Trendy Looks </h2>
+    <div className="App1">
+      {main1.map(item => (
+        <Mencc key={item.id} item={item} />
+      ))}
+      
+    </div>
+    </div>
     </>
+    
   );
 }

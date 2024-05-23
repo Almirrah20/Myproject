@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "ProductName": "Wedding Outfit",
+        "ProductImages": "../images/wm.png",
+        "ProductURL": "/Wedding"
+    },
+    {
+        "id": 2,
+        "ProductName": "Engagement Outfit",
+        "ProductImages": "../images/em.png",
+        "ProductURL": "/Engagement"
+    },
+    {
+        "id": 3,
+        "ProductName": "Seminar Outfit",
+        "ProductImages": "../images/sm.png",
+        "ProductURL": "/Seminars"
+    },
+    {
+        "id": 4,
+        "ProductName": "Gathering Outfit",
+        "ProductImages": "../images/gm.png",
+        "ProductURL": "/Gatherings"
+    },
+    {
+        "id": 5,
+        "ProductName": "Sports Outfit",
+        "ProductImages": "../images/spm.png",
+        "ProductURL": "/Sports"
+    }
+
+]

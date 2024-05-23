@@ -19,7 +19,7 @@ function Navbar() {
       
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
         <i class='fab fa-gofore' /> 
-        GlamGuide
+        lamGuide
           
         </Link>
         <div className='menu-icon' onClick={handleClick}>
