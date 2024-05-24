@@ -8,6 +8,7 @@ export default function Auth(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const [error, setError] = useState();
 
   const handleclik = () => {
     history.push("/login");
@@ -17,37 +18,44 @@ export default function Auth(props) {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:3001/register", {
-        name,
         email,
         password,
       });
-      console.log(response.data);
-      history.push("/login");
-      // Assuming backend sends back user data
-      // Optionally, you can redirect the user to a different page upon successful signup
+      if (response.status === 201) {
+        console.log(response.data);
+        history.push("/login");
+      } else {
+        if (response.status === 400) {
+          setError(response.data);
+        } else {
+          setError("");
+        }
+      }
     } catch (error) {
-      console.error("Error signing up:", error);
+      console.error("Error signing up:", error.response.data.error);
+      setError(error.response.data.error); // Set the error received from the server
     }
   };
 
   return (
-    <div className="Auth-form-container">
+    <div className="Auth-form-container ">
       <form onSubmit={handleSubmit} className="Auth-form">
+        <h3 className="Auth-form-title">Sign Up</h3>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
+          <p>{error}</p>
           <div className="form-group">
             <label>Full Name:</label>
             <input
+              required
               type="text"
               className="form-control"
-              placeholder="Your full name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              placeholder="Full Name"
             />
           </div>
           <div className="form-group">
             <label>Email:</label>
             <input
+              required
               type="email"
               className="form-control"
               placeholder="Email Address"
@@ -58,11 +66,21 @@ export default function Auth(props) {
           <div className="form-group">
             <label>Password:</label>
             <input
+              required
               type="password"
               className="form-control"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>confirm Password:</label>
+            <input
+              required
+              type="password"
+              className="form-control"
+              placeholder="Password"
             />
           </div>
           <div className="d-flex justify-content-between ">

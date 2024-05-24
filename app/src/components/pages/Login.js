@@ -7,6 +7,7 @@ export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,12 +16,21 @@ export default function Login(props) {
         email,
         password,
       });
-      console.log(response.data);
-      history.push("/");
-      // Assuming backend sends back user data
-      // Optionally, you can redirect the user to a different page upon successful signup
+
+      // Assuming your API returns some data upon successful login
+      if (response.status === 201) {
+        // Redirect to the home page upon successful login
+        console.log(response.status);
+        history.push("/home");
+      } else {
+        if (response.status === 400)
+          // Handle error if login is unsuccessful
+          console.log(response.status);
+        setError("Invalid email or password");
+      }
     } catch (error) {
-      console.error("Error signing up:", error);
+      console.error(error.response.data.error);
+      setError(error.response.data.error);
     }
   };
 
@@ -29,7 +39,7 @@ export default function Login(props) {
       <form onSubmit={handleSubmit} className="Auth-form">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Login In</h3>
-
+          <p>{error}</p>
           <div className="form-group">
             <label>Email:</label>
             <input

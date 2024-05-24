@@ -33,13 +33,13 @@ export default function Seminars  () {
       !item.Category.includes(product.Category)
   );
   
-    if (related.length < 5) {
-      const randomProducts = shuffleArray(allProducts.filter(item => !related.includes(item))).slice(0, 5 - related.length);
+    if (related.length < 4) {
+      const randomProducts = shuffleArray(allProducts.filter(item => !related.includes(item))).slice(0, 4 - related.length);
       return [...related, ...randomProducts];
     }
   
-    // If 5 or more related products found, shuffle them and return the first 5
-    const shuffledRelated = shuffleArray(related).slice(0, 5);
+    // If 4 or more related products found, shuffle them and return the first 4
+    const shuffledRelated = shuffleArray(related).slice(0, 4);
     return shuffledRelated;
   };
   

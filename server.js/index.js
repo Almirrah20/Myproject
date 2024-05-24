@@ -11,12 +11,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
-connectDB("mongodb://localhost:27017/mydb")
+connectDB("mongodb://localhost:27017/db")
   .then(() => {
     console.log("DB CONNECTED SUCCESSFULLY");
     // Start server only after DB connection is established
     app.listen(PORT, () => {
-      console.log('Server is running on http://localhost:${PORT}');
+      console.log(`Server is running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => console.log("SOME ERROR WHILE CONNECTING DB", err));
@@ -27,31 +27,33 @@ app.get("/", (req, res) => {
 
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
+
   try {
+    // Validate email and password (optional)
     if (!email || !password) {
-      throw new Error("Please provide all details");
+      throw new Error("Please enter your email and password."); // Throw a more specific error
     }
 
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      throw new Error("User already exists");
+      throw new Error("Email already in use."); // Throw a specific error
     }
 
     // Create a new user if the user doesn't exist
     const user = await User.create({
       email,
-      password,
+      password, // Handle password hashing if needed
     });
 
     if (!user) {
-      throw new Error("Something went wrong while creating user");
+      throw new Error("Something went wrong while creating user.");
     }
 
-    res.json({ message: "User Created Successfully" });
+    res.status(201).json({ message: "User Created Successfully" }); // Use 201 Created status code
   } catch (error) {
     console.error("Error registering user:", error.message);
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: error.message }); // Send specific error message
   }
 });
 
@@ -60,7 +62,7 @@ app.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      throw new Error("User not found");
+      throw new Error("User not Found.");
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
@@ -70,7 +72,7 @@ app.post("/login", async (req, res) => {
 
     const token = setUser(user);
 
-    return res.json({ token });
+    return res.status(201).json({ token, message: "sucessfully login" });
   } catch (error) {
     console.error("Error logging in:", error.message);
     res.status(400).json({ error: error.message });

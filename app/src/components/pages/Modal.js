@@ -20,7 +20,7 @@ const Modal = ({ closeModal, relatedProducts }) => {
           <div className="modal-header">
             <h5 className="modal-title">Recommended Products</h5>
             <button type="button" className="btn btn-primary close" onClick={handleCloseModal}>
-              Close 
+              Back
             </button>
           </div>
           <div className="modal-body">
@@ -32,7 +32,7 @@ const Modal = ({ closeModal, relatedProducts }) => {
                       <img
                         src={item.ProductImages}
                         alt={item.ProductName}
-                        style={{width:"100%",height:220}}
+                        style={{width:"100%",height:160}}
                       />
                     </div>
                     <div className="desc" style={{height:100}}>

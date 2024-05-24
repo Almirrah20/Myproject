@@ -6,6 +6,7 @@ import { TbHanger } from "react-icons/tb";
 import cimg3 from './cimg3.png';
 
 
+
 export default function Home() {
 
   return (
@@ -15,13 +16,12 @@ export default function Home() {
            <div className="slide">
              <img src={cimg3} alt="Image 1" />
            </div>
-          
          </section>
        <main>
          <section className="hero">
            <h2>AI Stylist <TbHanger /></h2>
            <p>Talk to your personal stylist and get free guide.</p>
-       <Chatbot />
+            <Chatbot />
          </section>
         
        </main>

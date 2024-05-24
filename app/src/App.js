@@ -10,6 +10,7 @@ import AboutUs from "./components/pages/AboutUs";
 import Auth from "./components/pages/Auth";
 import Login from "./components/pages/Login";
 
+
 function App() {
   return (
     <Router>
